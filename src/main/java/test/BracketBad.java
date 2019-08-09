@@ -21,10 +21,10 @@ public class BracketBad {
         return result;
     }
 
-    public static void recursion(String input, Set<String> result, int rightNumber, int leftNumber, char firstSym, char secondSym) {
+    public static void recursion(String input, Set<String> result, int iNumber, int jNumber, char firstSym, char secondSym) {
 
         int count = 0;
-        for (int step = 0, i = rightNumber; i < input.length(); i++) {
+        for (int step = 0, i = iNumber; i < input.length(); i++) {
             if (input.charAt(i) == firstSym) {
                 step++;
             }
@@ -32,8 +32,8 @@ public class BracketBad {
                 step--;
             }
             if (step < 0) {
-                for (int j = leftNumber; j <= i; j++) {
-                    if (input.charAt(j) == secondSym && (j == leftNumber || input.charAt(j - 1) != secondSym)) {
+                for (int j = jNumber; j <= i; j++) {
+                    if (input.charAt(j) == secondSym && (j == jNumber || input.charAt(j - 1) != secondSym)) {
                         recursion(input.substring(0, j) + input.substring(j + 1), result, i, j, firstSym, secondSym);
                     }
                 }
