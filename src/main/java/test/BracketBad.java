@@ -22,7 +22,6 @@ public class BracketBad {
     }
 
     public static void recursion(String input, Set<String> result, int iNumber, int jNumber, char firstSym, char secondSym) {
-
         int count = 0;
         for (int step = 0, i = iNumber; i < input.length(); i++) {
             if (input.charAt(i) == firstSym) {
