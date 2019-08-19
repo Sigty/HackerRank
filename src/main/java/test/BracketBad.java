@@ -13,6 +13,12 @@ public class BracketBad {
         System.out.println(validate("{}}{}}"));
         System.out.println(validate("{}x}x}"));
         System.out.println(validate("{a}{b{}c}}"));
+        System.out.println(validate("{}{}}{}"));
+        System.out.println(validate("}}{}{"));
+        System.out.println(validate("{}{"));
+        System.out.println(validate("{}{{{{"));
+        System.out.println(validate("{{}{{{}{"));
+        System.out.println(validate("}}{}{"));
     }
 
     public static Set<String> validate(String input) {
@@ -43,6 +49,12 @@ public class BracketBad {
         if (firstSym == '{' && count == 0 && secondSym == '}') {
             result.add(input);
             return;
+        }
+        String reversed = new StringBuilder(input).reverse().toString();
+        if (firstSym == '{') {
+            recursion(reversed, result, 0, 0, secondSym, firstSym);
+        } else {
+            result.add(reversed);
         }
     }
 }
