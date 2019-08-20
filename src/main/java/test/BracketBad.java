@@ -17,6 +17,7 @@ public class BracketBad {
         System.out.println(validate("}}{}{"));
         System.out.println(validate("{}{"));
         System.out.println(validate("{}{{{{"));
+        System.out.println(validate("{{a{}{b{c}{{"));
         System.out.println(validate("{{}{{{}{"));
         System.out.println(validate("}}{}{"));
     }
