@@ -9,11 +9,12 @@ public class MissingNumberArray {
         int[] arr1 = {1, 2, 3, 4, 5, 7};
         System.out.println(missingNumber(arr));
         System.out.println(missingNumberStream(arr));
+        System.out.println(missingNumber(arr1));
+        System.out.println(missingNumberStream(arr1));
     }
 
     public static int missingNumber(int[] arr) {
         int sum = 0;
-        Arrays.stream(arr).sum();
         for (int el : arr) {
             sum += el;
         }
